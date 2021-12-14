@@ -34,8 +34,11 @@ class Queue {
     }
     
     // Get the front element.
+    //for condition where stack 2 is empty, first move operation is done, so the time complexity will be O(N)
     public int peek() {
-
+        if (empty()) throw new NoSuchElementException("queue underflow");
+        if (stack2.isEmpty()) moveStack1toStack2();
+        return stack2.peek();
     }
     
     // Return whether the queue is empty.
