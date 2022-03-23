@@ -20,9 +20,17 @@ class Queue {
     stack1.push(x);
     }
 
-    // Removes the element from in front of queue.
-    public int dequeue() {
+    public void moveStack1toStack2(){
+        while(!stack1.isEmpty())
+        stack2.push(stack1.pop());
+    }
 
+    // Removes the element from in front of queue.
+    //for condition where stack 2 is empty, first move operation is done, so the time complexity will be O(N)
+    public int dequeue() {
+        if(empty())throw new NoSuchElementException("Queue underflow");
+        if(stack2.isEmpty()) moveStack1toStack2();
+        return stack2.pop();
     }
     
     // Get the front element.
