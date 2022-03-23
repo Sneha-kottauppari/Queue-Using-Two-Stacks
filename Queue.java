@@ -14,8 +14,10 @@ class Queue {
     }
 
     // Push element x to the back of queue.
+    //time complexity wil be O(1) for single push operation to stack 
+    //space complexity will be O(N) where N is size of stack1
     public void enqueue(int x) {
-
+    stack1.push(x);
     }
 
     // Removes the element from in front of queue.
